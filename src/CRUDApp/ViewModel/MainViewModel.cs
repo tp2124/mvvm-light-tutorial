@@ -8,6 +8,17 @@ namespace CRUDApp.ViewModel
 {
     public class MainViewModel : ViewModelBase
     {
+        string _HelloText;
+        public string HelloText { 
+            get => _HelloText;
+            set {
+                if (!_HelloText.Equals(value)) {
+                    _HelloText = value;
+                    NotifyPropertyChanged();
+                }
+            } 
+        }
+
         
         /// <summary>
         /// Initializes a new instance of the MainViewModel class.
@@ -15,6 +26,7 @@ namespace CRUDApp.ViewModel
         /// </summary>
         public MainViewModel(/*IDataAccessService servPxy*/)
         {
+            _HelloText = "Default Text";
             // _serviceProxy = servPxy;
             // Employees = new ObservableCollection<EmployeeInfo>();
             // EmpInfo = new EmployeeInfo(); 
@@ -23,6 +35,8 @@ namespace CRUDApp.ViewModel
             // SearchCommand = new RelayCommand(SearchEmployee);
             // SendEmployeeCommand = new RelayCommand<EmployeeInfo>(SendEmployeeInfo);
             // ReceiveEmployeeInfo();
+
+            // public string ButtonMsg { get { return "HelloFromStatic"; } }
         }
     }
 }

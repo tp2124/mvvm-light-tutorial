@@ -11,6 +11,6 @@
             <RowDefinition Height="100" />
             <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
-        <Button Content="Hello Wrold" Grid.Row="1" FontSize="20" Click="Button_Click" Height="50" Width="150"/>
+        <Button Content="{Binding HelloText}" Grid.Row="1" FontSize="20" Click="Button_Click" Height="50" Width="150"/>
     </Grid>
 </Window>
