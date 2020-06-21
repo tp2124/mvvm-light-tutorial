@@ -10,7 +10,6 @@ namespace CRUDApp
     {
         public MainWindow()
         {
-            this.DataContext = new MainViewModel();
             InitializeComponent();
         }
 

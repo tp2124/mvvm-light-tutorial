@@ -4,6 +4,7 @@
              xmlns:local="clr-namespace:CRUDApp"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <vm:ViewModelLocator xmlns:vm="clr-namespace:CRUDApp.ViewModel"
+                           x:Key="Locator" />
     </Application.Resources>
 </Application>
