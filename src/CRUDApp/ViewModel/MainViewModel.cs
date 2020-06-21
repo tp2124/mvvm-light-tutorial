@@ -23,6 +23,8 @@ namespace CRUDApp.ViewModel
             // SearchCommand = new RelayCommand(SearchEmployee);
             // SendEmployeeCommand = new RelayCommand<EmployeeInfo>(SendEmployeeInfo);
             // ReceiveEmployeeInfo();
+
+            public string ButtonMsg { get { return "HelloFromStatic"; } }
         }
     }
 }
