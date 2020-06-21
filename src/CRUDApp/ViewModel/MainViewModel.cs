@@ -1,4 +1,5 @@
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
@@ -8,25 +9,33 @@ namespace CRUDApp.ViewModel
 {
     public class MainViewModel : ViewModelBase
     {
-        string _HelloText;
-        public string HelloText { 
-            get => _HelloText;
+        string _ButtonText;
+        public string ButtonText { 
+            get => _ButtonText;
             set {
-                if (!_HelloText.Equals(value)) {
-                    _HelloText = value;
-                    NotifyPropertyChanged();
+                if (!_ButtonText.Equals(value)) {
+                    _ButtonText = value;
+                    RaisePropertyChanged();
                 }
             } 
         }
 
-        
+        public string Title { get { return "Such Diverse WPF App"; } }
+
         /// <summary>
         /// Initializes a new instance of the MainViewModel class.
         /// The class gets an instance of The DataAccessService
         /// </summary>
         public MainViewModel(/*IDataAccessService servPxy*/)
         {
-            _HelloText = "Default Text";
+            if (IsInDesignMode)
+            {
+                _ButtonText = "Default Text (Design Mode)";
+            }
+            else
+            {
+                _ButtonText = "Default Text";
+            }
             // _serviceProxy = servPxy;
             // Employees = new ObservableCollection<EmployeeInfo>();
             // EmpInfo = new EmployeeInfo(); 
