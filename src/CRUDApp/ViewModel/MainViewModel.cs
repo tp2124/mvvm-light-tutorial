@@ -92,7 +92,7 @@ namespace CRUDApp.ViewModel
         {
             if (e.PropertyName.Equals(nameof(MessageText)))
             {
-                MessageChangedNotifcation = $"You changed the message to:{MessageText}";
+                MessageChangedNotifcation = $"You changed the message to: {MessageText}";
             }
         }
 

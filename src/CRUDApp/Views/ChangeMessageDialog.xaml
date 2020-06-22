@@ -9,6 +9,7 @@
         WindowStartupLocation="CenterOwner"
         SizeToContent="WidthAndHeight"
         ResizeMode="NoResize"
+        MinWidth="200"
         FocusManager.FocusedElement="{Binding ElementName=MessageTextBox}"
         d:DataContext="{Binding Main, Source={StaticResource Locator}}">
     

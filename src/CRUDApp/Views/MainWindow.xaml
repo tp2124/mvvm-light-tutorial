@@ -11,7 +11,11 @@
         Height="600" 
         Width="800"
         DataContext="{Binding Main, Source={StaticResource Locator}}">
-
+    
+    <Window.Resources>
+        <ResourceDictionary Source="ApplicationResources.xaml" />
+    </Window.Resources>
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="100" />
@@ -19,7 +23,7 @@
             <RowDefinition Height="100" />
             <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
-        <Button Content="{Binding ButtonText}" Grid.Row="0" FontSize="20" Command="{Binding ChangeMessage}" Height="auto" Width="auto" Margin="5"/>
+        <Button Content="{Binding ButtonText}" Grid.Row="0" FontSize="20" Command="{Binding ChangeMessage}" Height="auto" Width="auto" />
         <TextBlock Text="{Binding MessageText}" Grid.Row="1" />
         <TextBlock Text="{Binding MessageChangedNotifcation}" Grid.Row="2" />
     </Grid>
