@@ -6,6 +6,7 @@ A quick tutorial of utilizing the MVVM Light NuGet package. [Tutorial](https://w
 * [Reflective WPF Classes generated at runtime](https://blog.wedport.co.uk/2020/06/10/generating-c-net-classes-at-runtime/?utm_source=csharpdigest&utm_medium=email&utm_campaign=316)
     * [MUST READ FOR INITIAL ViewModel SUPPORT](https://github.com/cheungt6/public/tree/master/ReflectionEmitClassGeneration/ViewModel)
 * [Implementation of DialogService on it's own library but using other parts of MVVMLight](https://github.com/FantasticFiasco/mvvm-dialogs-integrated-into-mvvm-light-toolkit)
+    * [In depth usage of DialogService](https://www.codeproject.com/Articles/36745/Showing-Dialogs-When-Using-the-MVVM-Pattern-in-WPF)
 
 # Technologies
 * MvvmLightLibsStd
