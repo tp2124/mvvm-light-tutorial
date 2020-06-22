@@ -1,0 +1,32 @@
+﻿<Window x:Class="CRUDApp.Views.ChangeMessageDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:CRUDApp.ViewModel"
+        mc:Ignorable="d"
+        Title="Set Message"
+        WindowStartupLocation="CenterOwner"
+        SizeToContent="WidthAndHeight"
+        FocusManager.FocusedElement="{Binding ElementName=MessageTextBox}"
+        d:DataContext="{Binding Main, Source={StaticResource Locator}}">
+    
+    <StackPanel>
+        <TextBox
+            x:Name="MessageTextBox"
+            Text="{Binding Message, UpdateSourceTrigger=PropertyChanged}" />
+
+        <StackPanel
+            Orientation="Horizontal"
+            HorizontalAlignment="Right">
+            <Button
+                Content="OK"
+                Command="{Binding OkCommand}"
+                IsDefault="True" />
+            <Button
+                Content="Cancel"
+                IsCancel="True" />
+        </StackPanel>
+    </StackPanel>
+
+</Window>

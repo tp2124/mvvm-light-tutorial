@@ -12,10 +12,5 @@ namespace CRUDApp
         {
             InitializeComponent();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs eventArgs) {
-            MessageBox.Show("Welcome to WPF");
-            ((MainViewModel)this.DataContext).ButtonText = "Button has been pressed";
-        }
     }
 }

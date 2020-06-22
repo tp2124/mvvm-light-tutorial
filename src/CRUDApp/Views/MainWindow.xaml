@@ -3,17 +3,23 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:md="https://github.com/fantasticfiasco/mvvm-dialogs"
         xmlns:local="clr-namespace:CRUDApp"
+        md:DialogServiceViews.IsRegistered="True"
         mc:Ignorable="d"
         Title="{Binding Title}" 
         Height="600" 
         Width="800"
         DataContext="{Binding Main, Source={StaticResource Locator}}">
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="100" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="100" />
             <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
-        <Button Content="{Binding ButtonText}" Grid.Row="1" FontSize="20" Click="Button_Click" Height="50" Width="150"/>
+        <Button Content="{Binding ButtonText}" Grid.Row="0" FontSize="20" Command="{Binding ChangeMessage}" Height="auto" Width="auto" Margin="5"/>
+        <TextBlock Text="{Binding MessageText}" Grid.Row="1" />
     </Grid>
 </Window>

@@ -12,6 +12,7 @@
   See http://www.galasoft.ch/mvvm
 */
 using GalaSoft.MvvmLight.Ioc;
+using MvvmDialogs;
 
 namespace CRUDApp.ViewModel
 {
@@ -20,6 +21,7 @@ namespace CRUDApp.ViewModel
         public ViewModelLocator()
         {
             SimpleIoc.Default.Register<MainViewModel>();
+            SimpleIoc.Default.Register<IDialogService>(() => new DialogService());
         }
 
         public MainViewModel Main => SimpleIoc.Default.GetInstance<MainViewModel>();
