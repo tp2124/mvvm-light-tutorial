@@ -1,6 +1,7 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Input;
 using GalaSoft.MvvmLight;
@@ -15,6 +16,7 @@ namespace CRUDApp.ViewModel
     {
         string _buttonText;
         string _messageText;
+        string _messageChanged;
         private readonly RelayCommand _changeMessage;
         private readonly IDialogService _dialogService;
 
@@ -39,6 +41,13 @@ namespace CRUDApp.ViewModel
                 Set(nameof(MessageText), ref _messageText, value);
             }
         }
+
+        public string MessageChangedNotifcation
+        {
+            get => _messageChanged;
+            set { Set(nameof(MessageChangedNotifcation), ref _messageChanged, value); }
+        }
+
         public ICommand ChangeMessage => _changeMessage;
 
         public string Title { get { return "Such Diverse WPF App"; } }
@@ -63,8 +72,7 @@ namespace CRUDApp.ViewModel
                 _messageText = "An initial message to display to people tinkering with WPF.";
             }
 
-
-
+            PropertyChanged += MainViewModel_PropertyChanged;
 
             // _serviceProxy = servPxy;
             // Employees = new ObservableCollection<EmployeeInfo>();
@@ -76,6 +84,16 @@ namespace CRUDApp.ViewModel
             // ReceiveEmployeeInfo();
 
             // public string ButtonMsg { get { return "HelloFromStatic"; } }
+        }
+
+        // When property gets changed, raise the PropertyChanged 
+        // event of the ViewModel copy of the property
+        private void MainViewModel_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName.Equals(nameof(MessageText)))
+            {
+                MessageChangedNotifcation = $"You changed the message to:{MessageText}";
+            }
         }
 
         private void Add()
